@@ -54,6 +54,7 @@ console.log(monthlyRate);
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+function mortgageCalculator 
 
 
 
@@ -77,7 +78,24 @@ Then, add control flow within your function such that IF creditScore is above 74
 
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
-
+function mortgageCalculator(P, I, N, C){
+    let interest;
+    if (C > 739){
+        interest = I - 0.005;
+    }else if ( C < 660){
+        interest = I + 0.005;
+    }else {
+        interest = I
+    }
+let principal = P;
+let  year = N;
+let creditScore = C;
+let monthlyInterestRate = interest/12;
+let periods = years * 12;
+let monthlyRate = (principal * monthyInterestRate) / (1 - (Math.pow((1 + monthlyInterestRate), periods * -1)));
+return monthlyInterestRate;
+}
+mortgageCalculator(200000, 0.05, 30, 648)
 
 
 
