@@ -9,7 +9,7 @@ var interestRate = interest;
 var years = Y;
 var name = Med;
 
-P = 20000;
+P = 200000;
 interest = 0.05;
 Y = 30;
 
@@ -42,9 +42,12 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
+var n1 = (1 + monthyInterestRate)^N;
+var numerator = p * n1 * monthyInterestRate;
+var denominator = n1 - 1;
+var monthlyRate = numerator/ denominator;
 
-
-
+console.log(monthlyRate);
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
@@ -93,7 +96,17 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
-
+function variableInterestRate(P, interest, periods){
+    let counter = interest - 0.02
+    for (let i = 0; i < 9; i++){
+        let interest = counter / 12;
+        let N = periods * 12
+        let monthlyRate = P * ((interest * Math.pow((1 + interest), N)) / ((Math.pow((1 + interest), N))-1));
+        console.log('${name}, with an interest rate of ${counter}, your monthly rate is $${monthlyRate}')
+        counter = counter + 0.005
+    }
+}
+variableInterestRate(200000, 0.04, 30)
 
 
 
