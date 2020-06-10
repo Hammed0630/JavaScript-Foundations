@@ -4,7 +4,14 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
+var principal = P;
+var interestRate = interest;
+var years = Y;
+var name = Med;
 
+P = 20000;
+interest = 0.05;
+Y = 30;
 
 
 
@@ -14,7 +21,8 @@
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 (2) Create another variable called `periods` and give it the value of years*12.
 */
-
+const monthyInterestRate = interest/12;
+const periods = Y * 12;
 
 
 
